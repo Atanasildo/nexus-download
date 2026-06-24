@@ -7,112 +7,113 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'Courier New', Courier, monospace;
-    background: #050505;
-    color: #c8f0d0;
+    font-family: 'Courier New', monospace;
+    background: #000;
+    color: #e2e8f0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 36px 16px 40px;
+    padding: 32px 16px;
   }
-
-  /* ── Logo ── */
   .logo {
-    width: 76px; height: 76px;
-    background: #050505;
+    width: 80px; height: 80px;
+    background: #000;
     border: 2px solid #00e676;
     border-radius: 18px;
     display: flex; align-items: center; justify-content: center;
     font-size: 38px; font-weight: 900;
+    margin-bottom: 14px;
     color: #00e676;
-    margin-bottom: 16px;
-    box-shadow: 0 0 24px rgba(0,230,118,.25), inset 0 0 12px rgba(0,230,118,.05);
-    letter-spacing: -2px;
-    position: relative;
+    box-shadow: 0 0 24px rgba(0,230,118,.3);
   }
-  .logo-dot {
-    position: absolute; top: 10px; right: 10px;
-    width: 9px; height: 9px;
-    background: #00e676;
-    border-radius: 50%;
-    box-shadow: 0 0 6px #00e676;
-  }
-
   h1 {
     font-size: 30px; font-weight: 900;
-    color: #00e676;
-    letter-spacing: 6px;
-    margin-bottom: 6px;
-    text-shadow: 0 0 18px rgba(0,230,118,.3);
+    color: #00e676; letter-spacing: 6px;
+    margin-bottom: 4px;
   }
-  .subtitle { color: #2d6b2d; font-size: 12px; letter-spacing: 2px; margin-bottom: 36px; }
-
-  /* ── Card ── */
+  .subtitle {
+    color: #1a4d2e; font-size: 11px;
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 32px;
+  }
   .card {
     background: #080808;
     border: 1px solid #0d2d0d;
     border-left: 3px solid #00e676;
     border-radius: 10px;
-    padding: 22px 20px;
-    width: 100%; max-width: 400px;
+    padding: 22px;
+    width: 100%;
+    max-width: 420px;
     margin-bottom: 14px;
   }
-
-  /* ── Versão ── */
   .version-row {
     display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
-  .version-label { font-size: 10px; color: #1a4d1a; letter-spacing: 2px; text-transform: uppercase; }
+  .version-label { font-size: 10px; color: #1a4d2e; text-transform: uppercase; letter-spacing: 2px; }
   .version-val { font-size: 24px; font-weight: 900; color: #00e676; }
   .version-badge {
     background: rgba(0,230,118,.08);
-    border: 1px solid rgba(0,230,118,.2);
+    border: 1px solid rgba(0,230,118,.25);
     color: #00e676;
     font-size: 10px; font-weight: 700;
     padding: 3px 10px; border-radius: 4px;
     text-transform: uppercase; letter-spacing: 1px;
   }
-
-  /* ── Botão ── */
   .btn-download {
     display: flex; align-items: center; justify-content: center; gap: 10px;
     width: 100%;
-    background: transparent;
+    background: #000;
     border: 1px solid #00e676;
     color: #00e676;
-    font-family: 'Courier New', monospace;
-    font-size: 14px; font-weight: 700;
-    letter-spacing: 2px;
-    padding: 15px;
+    font-size: 14px; font-weight: 900;
+    padding: 16px;
     border-radius: 6px;
     text-decoration: none;
+    letter-spacing: 2px;
     transition: background .2s, box-shadow .2s;
     margin-bottom: 12px;
+    font-family: 'Courier New', monospace;
   }
-  .btn-download:hover, .btn-download:active {
-    background: rgba(0,230,118,.08);
-    box-shadow: 0 0 16px rgba(0,230,118,.2);
-  }
-
+  .btn-download:hover { background: rgba(0,230,118,.08); box-shadow: 0 0 20px rgba(0,230,118,.2); }
+  .btn-download:active { opacity: .8; }
   .file-info {
     display: flex; align-items: center; gap: 8px;
-    color: #1a4d1a; font-size: 11px; letter-spacing: 1px;
-    justify-content: center;
+    color: #1a4d2e; font-size: 11px;
+    justify-content: center; letter-spacing: 1px;
   }
-  .dot { width: 3px; height: 3px; border-radius: 50%; background: #1a4d1a; }
+  .dot { width: 3px; height: 3px; border-radius: 50%; background: #1a4d2e; }
 
-  /* ── Passos ── */
-  .steps-title {
-    font-size: 11px; font-weight: 700; color: #00e676;
+  /* Vídeo */
+  .video-wrap {
+    width: 100%; max-width: 420px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #0d2d0d;
+    border-left: 3px solid #00e676;
+    background: #080808;
+  }
+  .video-label {
+    padding: 12px 18px 8px;
+    font-size: 10px; color: #1a4d2e;
     text-transform: uppercase; letter-spacing: 2px;
-    margin-bottom: 18px;
   }
-  .step {
-    display: flex; gap: 14px; align-items: flex-start;
-    margin-bottom: 18px;
+  video {
+    width: 100%;
+    display: block;
+    max-height: 480px;
+    background: #000;
   }
+
+  /* Passos */
+  .steps-title {
+    font-size: 10px; font-weight: 700; color: #1a4d2e;
+    text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
   .step:last-child { margin-bottom: 0; }
   .step-num {
     width: 26px; height: 26px; flex-shrink: 0;
@@ -123,48 +124,43 @@
     font-size: 11px; font-weight: 900; color: #00e676;
   }
   .step-body { flex: 1; padding-top: 2px; }
-  .step-title { font-size: 13px; font-weight: 700; color: #c8f0d0; margin-bottom: 3px; }
-  .step-desc { font-size: 11px; color: #2d6b2d; line-height: 1.6; }
-  .step-desc b { color: #7dd3a8; }
+  .step-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; color: #e2e8f0; }
+  .step-desc { font-size: 11px; color: #334d33; line-height: 1.6; }
+  .step-desc b { color: #94a3b8; }
   .warn {
-    background: rgba(255,179,0,.06);
-    border: 1px solid rgba(255,179,0,.15);
+    background: rgba(245,158,11,.06);
+    border: 1px solid rgba(245,158,11,.2);
     border-radius: 6px;
     padding: 10px 12px;
-    font-size: 11px; color: #a07820;
-    line-height: 1.6;
-    margin-top: 8px;
+    font-size: 11px; color: #f59e0b;
+    line-height: 1.6; margin-top: 8px;
   }
-
-  /* ── Footer ── */
   .footer {
-    margin-top: 28px;
+    margin-top: 24px;
     color: #0d2d0d; font-size: 10px; text-align: center;
     letter-spacing: 1px;
   }
-  .blink { animation: blink 1.2s step-end infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 </style>
 </head>
 <body>
 
-<div class="logo">C<div class="logo-dot"></div></div>
+<div class="logo">C</div>
 <h1>CIPHER</h1>
-<p class="subtitle">SISTEMA DE SINAIS · AVIATOR · ELEPHANTBET</p>
+<p class="subtitle">Sistema de Sinais · Aviator · ElephantBet</p>
 
-<!-- Card principal -->
+<!-- Card versão + download -->
 <div class="card">
   <div class="version-row">
     <div>
-      <div class="version-label">VERSÃO ACTUAL</div>
-      <div class="version-val" id="ver-num">v6.6</div>
+      <div class="version-label">Versão actual</div>
+      <div class="version-val" id="ver-num">v1.4</div>
     </div>
-    <div class="version-badge">ESTÁVEL</div>
+    <div class="version-badge">Estável</div>
   </div>
 
   <a class="btn-download" id="btn-dl"
-     href="https://github.com/Atanasildo/aviator-nativo/releases/download/latest-build/CIPHER-v6.6.apk">
-    ⬇ DESCARREGAR CIPHER
+     href="https://github.com/Atanasildo/aviator-nativo/releases/download/latest-build/CIPHER-v1.4.apk">
+    ↓ DESCARREGAR CIPHER
   </a>
 
   <div class="file-info">
@@ -172,13 +168,24 @@
     <span class="dot"></span>
     <span>Android 8+</span>
     <span class="dot"></span>
-    <span id="file-size">~3 MB</span>
+    <span id="file-size">2.9 MB</span>
   </div>
 </div>
 
-<!-- Card de instalação -->
+<!-- Vídeo tutorial -->
+<div class="video-wrap">
+  <div class="video-label">> Como descarregar e instalar</div>
+  <iframe
+    src="https://drive.google.com/file/d/1DQLYE6bzpH9B1_StpRuOBb4w5lj_vNy7/preview"
+    allow="autoplay"
+    allowfullscreen
+    style="width:100%;height:420px;border:none;display:block;background:#000;">
+  </iframe>
+</div>
+
+<!-- Card instalação -->
 <div class="card">
-  <div class="steps-title">&gt; COMO INSTALAR</div>
+  <div class="steps-title">> Como instalar</div>
 
   <div class="step">
     <div class="step-num">1</div>
@@ -195,7 +202,7 @@
     <div class="step-body">
       <div class="step-title">Clica em "Descarregar CIPHER"</div>
       <div class="step-desc">
-        O ficheiro <b id="apk-name">CIPHER-v6.6.apk</b> será guardado nas transferências.
+        O ficheiro <b id="apk-name">CIPHER-v1.4.apk</b> será guardado nas transferências.
       </div>
     </div>
   </div>
@@ -205,7 +212,7 @@
     <div class="step-body">
       <div class="step-title">Permite apps de fontes externas</div>
       <div class="step-desc">
-        Quando aparecer o aviso, toca em <b>Definições</b> → activa <b>"Permitir desta fonte"</b>.
+        No aviso de segurança: <b>Definições</b> → activa <b>"Permitir desta fonte"</b> → volta atrás.
       </div>
     </div>
   </div>
@@ -215,10 +222,10 @@
     <div class="step-body">
       <div class="step-title">Instala e abre o CIPHER</div>
       <div class="step-desc">
-        Toca em <b>Instalar</b>. O CIPHER é assinado com chave própria — não será bloqueado pelo Play Protect.
+        Toca em <b>Instalar</b>. Se aparecer aviso do Play Protect, toca em <b>"Instalar mesmo assim"</b>.
       </div>
       <div class="warn">
-        ⚠ Se aparecer aviso do Play Protect, toca em <b>"Instalar mesmo assim"</b>. O CIPHER não contém vírus nem recolhe dados pessoais.
+        ⚠ O aviso do Play Protect é normal em apps fora da Play Store. O CIPHER não recolhe dados pessoais.
       </div>
     </div>
   </div>
@@ -228,15 +235,15 @@
     <div class="step-body">
       <div class="step-title">Abre o Aviator no ElephantBet</div>
       <div class="step-desc">
-        Abre o CIPHER, faz login no ElephantBet e aguarda o primeiro sinal. <b>Sistema activo.</b>
+        Faz login no ElephantBet dentro da app e aguarda o 1.º crash — o bot activa automaticamente. ✅
       </div>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  CIPHER · USO EXCLUSIVO PARA UTILIZADORES AUTORIZADOS<br>
-  <span class="blink">_</span>
+  CIPHER · Uso exclusivo para utilizadores autorizados<br>
+  Versão actualizada automaticamente
 </div>
 
 <script>
@@ -246,13 +253,13 @@ fetch('https://api.github.com/repos/Atanasildo/aviator-nativo/releases/latest')
     const apk = (d.assets || []).find(a => a.name.endsWith('.apk'));
     if (apk) {
       document.getElementById('btn-dl').href = apk.browser_download_url;
-      document.getElementById('file-size').textContent = (apk.size/1024/1024).toFixed(1)+' MB';
+      document.getElementById('file-size').textContent = (apk.size/1024/1024).toFixed(1) + ' MB';
       const m = apk.name.match(/v([\d.]+)/i);
-      if (m) document.getElementById('ver-num').textContent = 'v'+m[1];
+      if (m) document.getElementById('ver-num').textContent = 'v' + m[1];
       document.getElementById('apk-name').textContent = apk.name;
-      document.getElementById('btn-dl').textContent = '⬇ DESCARREGAR CIPHER';
     }
-  }).catch(()=>{});
+  }).catch(() => {});
 </script>
+<!-- v1.5.1 -->
 </body>
 </html>
